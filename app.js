@@ -10,7 +10,7 @@ app.use(bodyParser.json)
 app.use("/c",coursesRouter);
 
 mongoose.connect(process.env.DB_CONNECTION_URL,()=>{
-    console.log("connected to db:");
+    console.log("connected to database:");
 });
 
 app.listen(process.env.PORT, function () {
