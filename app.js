@@ -1,5 +1,6 @@
 //jshint esversion:6
 const express = require("express");
+cont hello=Number;
 const coursesRouter= require("./routes/courses");
 const bodyParser=require('body-parser')
 require("dotenv").config();
