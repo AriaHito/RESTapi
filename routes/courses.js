@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
     try {
         const courses = await Course.find()
-        res.json(courses)
+        res.status(200).json(courses)
 
     } catch (err) {
         res.json(err)
@@ -28,7 +28,7 @@ router.get("/:courseId", async (req, res) => {
 
     try {
         const c = await Course.findById(courseId)
-        res.json(c)
+        res.status(200).json(c)
 
     } catch (err) {
         res.json(err)
@@ -43,7 +43,7 @@ router.get("/:courseId", async (req, res) => {
 router.post("/", async (req, res) => {
 
     const course = await Course.create(req.body);
-    res.json(course)
+    res.status(200).json(course)
 
 });
 
@@ -58,7 +58,7 @@ router.delete("/:courseId", async (req, res) => {
         await course.remove({
             _id: req.params.courseId
         })
-        res.json()
+        res.status(200).json()
     } catch (error) {
         res.json(error)
     }
@@ -75,7 +75,7 @@ router.put("/:courseId", async (req, res) => {
                     "_id": courseId
 
                 }, req.body)
-                res.json(course)
+                res.status(200).json(course)
 
             } catch (error) {
 
