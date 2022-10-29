@@ -1,4 +1,4 @@
-const ex = require("express");
+const ex = require("express.js");
 const course = require("../models/course");
 const Course = require("../models/course");
 const router = ex.Router();
